@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "principal";
+  src: url("../public/fonts/Bauer-Bodoni-Std-1-Roman_6253.ttf");
+}
+@font-face {
+  font-family: "secondary";
+  src: url("../public/fonts/Notera_PersonalUseOnly.ttf");
+}
+@font-face {
+  font-family: "tertiary";
+  src: url("../public/fonts/BauerBodoniStd-Italic.otf");
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: "principal";
+}
+body {
+  background: url("../public/images/fondo.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+.principal{
+  font-family: principal !important;
+  font-size: 1.25em !important;
+  line-height: 1.25em !important;
+}
+.secondary{
+  font-family: secondary !important;
+  font-size: 3em !important;
+  line-height: 20px !important;
+}
+.tertiary{
+  font-family: tertiary !important;
+}
