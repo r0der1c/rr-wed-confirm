@@ -45,7 +45,7 @@ export default function Home() {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Box mt={2}>
+          <Box my={2}>
             <Button disableElevation color="secondary" variant="contained" onClick={handlerClick} className={classes.button} >{"Save the Date"}</Button>
           </Box>
         </Grid>
