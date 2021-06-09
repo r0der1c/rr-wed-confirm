@@ -14,12 +14,16 @@ const useStyles = makeStyles((theme) => ({
 		"& label": {
 			background: "#f2f2f2"
 		},
+		"& input": {
+			padding: theme.spacing(1.5),
+		},
 		"& label, & input": {
 			fontSize: "1.5em"
 		}
 	},
 	button: {
-		padding: theme.spacing(1, 5)
+		padding: theme.spacing(0.5, 2),
+		maxWidth: 400
 	}
 }))
 
@@ -28,14 +32,10 @@ export default function Confirmation() {
 	const router = useRouter()
 	const [yesNo, setYesNo] = useState()
 	const [text, setText] = useState("")
-	const [disabled, setDisabled] = useState(true)
 	const [loading, setLoading] = useState(false)
 
-	useEffect(() => {
-		setDisabled(!(yesNo && text.trim()))
-	}, [yesNo, text])
-
 	const handlerClick = () => {
+		if(!(yesNo && text.trim())) return
 		setLoading(true)
 		axios.post(`/api/confirm/add`, {
 			name: text.trim(),
@@ -60,12 +60,12 @@ export default function Confirmation() {
 		<Container>
 			<Grid container align="center" justify="center" alignItems="center">
 				<Grid item xs={12}>
-					<Box mt={4}>
+					<Box mt={2}>
 						<Image src="/images/save.png" width="600" height="209" />
 					</Box>
 				</Grid>
 				<Grid item xs={12}>
-					<Box mt={4}>
+					<Box mt={2}>
 						<Image src="/images/palmita.png" width="88" height="50" />
 					</Box>
 				</Grid>
@@ -76,7 +76,7 @@ export default function Confirmation() {
 					<Typography className="secondary">{"¡ nos casamos !"}</Typography>
 				</Grid>
 				<Grid item xs={12}>
-					<Box width={45} m={6} border="1px solid black" />
+					<Box width={35} m={3} border="1px solid black" />
 				</Grid>
 				<Grid item xs={12}>
 					<Typography className="principal" style={{ maxWidth: 500 }}>
@@ -84,11 +84,11 @@ export default function Confirmation() {
             			que seas parte de ese día tan importante de nuestras vidas.`}
 					</Typography>
 					<Typography className="principal">
-						{`Por favor, confirmanos tu asistencia:`}
+						{`Por favor, confírmanos tu asistencia:`}
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
-					<Box mt={6} >
+					<Box mt={2} >
 						<TextField label="Nombre y Apellido" variant="outlined" fullWidth className={classes.textfield}
 							onChange={handleChange}
 							value={text}
@@ -99,7 +99,8 @@ export default function Confirmation() {
 					</Box>
 				</Grid>
 				<Grid item xs={12}>
-					<Box maxWidth={400} display="flex" mt={3}>
+					<Box maxWidth={400} display="flex" mt={2}>
+						<Box flexGrow={1} />
 						<Button disableElevation
 							onClick={handlerYesNo("yes")}
 							color={yesNo === "yes" ? "primary" : "secondary"}
@@ -115,15 +116,16 @@ export default function Confirmation() {
 							className={classes.button} >
 							{"No asistiré"}
 						</Button>
+						<Box flexGrow={1} />
 					</Box>
 				</Grid>
 				<Grid item xs={12}>
-					<Box mt={3}>
-						<Button disableElevation color="secondary" variant="contained" disabled={disabled} onClick={handlerClick} className={classes.button} >{"ENVIAR"}</Button>
+					<Box mt={2}>
+						<Button disableElevation color="secondary" variant="contained" onClick={handlerClick} className={classes.button} >{"ENVIAR"}</Button>
 					</Box>
 				</Grid>
 				<Grid item xs={12}>
-					<Box mt={3}>
+					<Box mt={1}>
 						<IconButton color="secondary" onClick={handlerRegresar} ><HomeIcon fontSize="large" /></IconButton>
 					</Box>
 				</Grid>

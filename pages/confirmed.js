@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	table:{
 		"& *":{
-			fontSize: "1.25em !important"
+			fontSize: "1.1em !important"
 		},
 		"& thead th":{
 			fontWeight: "bold"
@@ -45,7 +45,7 @@ export default function Confirmed() {
 		<Container>
 			<Grid container align="center" justify="center" alignItems="center">
 				<Grid item xs={12}>
-					<Box mt={12} mb={4}>
+					<Box mt={4} >
 						<Image src="/images/palmita.png" width="88" height="50" />
 					</Box>
 				</Grid>

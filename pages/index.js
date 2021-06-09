@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   button:{
-    padding: theme.spacing(1,5)
+    padding: theme.spacing(0.5,2)
   }
 }))
 
@@ -26,10 +26,10 @@ export default function Home() {
     router.push("/confirmation")
   }
   return <Layout>
-    <Container> 
+    <Container disableGutters> 
       <Grid container align = "center" justify = "center" alignItems = "center">
         <Grid item xs={12}>
-          <Box mt={4} mb={2}>
+          <Box mt={1} mb={2}>
             <Image src="/images/foto.png" width="516" height="700"/> 
           </Box>
         </Grid>
@@ -43,13 +43,10 @@ export default function Home() {
           <Typography className="tertiary">
             {`Eclesiastés 4:12`}
           </Typography>
-          <Typography className="principal">
-            {`♥`}
-          </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Box mt={3}>
-            <Button disableElevation color="secondary" variant="contained" onClick={handlerClick} className={classes.button} >{"Save The Date"}</Button>
+          <Box mt={2}>
+            <Button disableElevation color="secondary" variant="contained" onClick={handlerClick} className={classes.button} >{"Save the Date"}</Button>
           </Box>
         </Grid>
       </Grid>

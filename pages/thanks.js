@@ -21,7 +21,11 @@ const useStyles = makeStyles((theme) => ({
 		letterSpacing: "0.25em"
 	},
 	size175em:{
-		fontSize: "1.75em !important"
+		fontSize: "1.75em !important",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "1.5em !important",
+		}		
+		
 	}
 }))
 
@@ -41,7 +45,7 @@ export default function Thanks() {
 					</Box>
 				</Grid>
 				<Grid item xs={12}>
-					<Typography className={`principal ${classes.spacing} ${classes.size175em}`}>{"¡ MUCHAS GRACIAS !"}</Typography>
+					<Typography className={`principal ${classes.spacing} ${classes.size175em}`}>{"¡MUCHAS GRACIAS!"}</Typography>
 				</Grid>
 				<Grid item xs={12}>
 					<Typography className="principal">{"por confirmarnos tu asistencia."}</Typography>

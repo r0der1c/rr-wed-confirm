@@ -24,7 +24,13 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         textTransform: "none",
-        fontSize: "1.5em"
+        fontSize: "1.25em"
+      }
+    },
+    MuiTextField: {
+      root: {
+        textTransform: "none",
+        fontSize: "0.85em"
       }
     }
   }  
