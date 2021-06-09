@@ -38,7 +38,7 @@ export default function Home() {
             {`"Uno solo puede ser vencido, pero dos podrán resistir.`}
           </Typography>
           <Typography className="tertiary">
-            {`Y ademas, la cuerda de tres hilos no se rompe fácilmente".`}
+            {`Y además, la cuerda de tres hilos no se rompe fácilmente".`}
           </Typography>
           <Typography className="tertiary">
             {`Eclesiastés 4:12`}
